@@ -1,5 +1,7 @@
 # ansible-uptime-kuma
 
+⚠️ This is a fork to incorporate fixes into the semi-abandoned upstream. No support is on offer if you decide to use this :)
+
 This collection contains modules that allow to configure [Uptime Kuma](https://github.com/louislam/uptime-kuma) with Ansible.
 
 Python version 3.7+ and Ansible version 2.9+ are required.
