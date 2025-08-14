@@ -28,12 +28,12 @@ pip install uptime-kuma-api==0.13.0
 
 Then install the ansible collection itself:
 ```shell
-ansible-galaxy collection install lucasheld.uptime_kuma
+ansible-galaxy collection install colocataires.uptime_kuma
 ```
 
 Alternately, you can install a specific version (e.g. `0.14.0`):
 ```shell
-ansible-galaxy collection install lucasheld.uptime_kuma:==0.14.0
+ansible-galaxy collection install colocataires.uptime_kuma:==0.14.0
 ```
 
 ## Modules
@@ -68,7 +68,7 @@ The following modules are available:
 Directly after the installation of Uptime Kuma, the initial username and password must be set:
 ```yaml
 - name: Specify the initial username and password
-  lucasheld.uptime_kuma.setup:
+  colocataires.uptime_kuma.setup:
     api_url: http://127.0.0.1:3001
     api_username: admin
     api_password: secret123
@@ -80,7 +80,7 @@ The token usage is recommended because frequent logins lead to a rate limit. In 
 Option 1 (not recommended): Create a monitor by using the credentials directly:
 ```yaml
 - name: Login with credentials and create a monitor
-  lucasheld.uptime_kuma.monitor:
+  colocataires.uptime_kuma.monitor:
     api_url: http://127.0.0.1:3001
     api_username: admin
     api_password: secret123
@@ -93,7 +93,7 @@ Option 1 (not recommended): Create a monitor by using the credentials directly:
 Option 2 (recommended): Generate a token and create a monitor by using this token:
 ```yaml
 - name: Login with credentials once and register the result
-  lucasheld.uptime_kuma.login:
+  colocataires.uptime_kuma.login:
     api_url: http://127.0.0.1:3001
     api_username: admin
     api_password: secret123
@@ -104,7 +104,7 @@ Option 2 (recommended): Generate a token and create a monitor by using this toke
     api_token: "{{ result.token }}"
 
 - name: Login by token and create a monitor
-  lucasheld.uptime_kuma.monitor:
+  colocataires.uptime_kuma.monitor:
     api_url: http://127.0.0.1:3001
     api_token: "{{ api_token }}"
     name: Google

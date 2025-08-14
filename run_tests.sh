@@ -12,7 +12,7 @@
 # ./run_tests.sh 1.19.4 maintenance maintenance_info
 
 venv_path="$(pwd)/venv/bin/python"
-collection_path="$HOME/.ansible/collections/ansible_collections/lucasheld/uptime_kuma"
+collection_path="$HOME/.ansible/collections/ansible_collections/colocataires/uptime_kuma"
 version="$1"
 modules="${@:2}"
 
